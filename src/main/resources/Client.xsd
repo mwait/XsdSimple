@@ -4,13 +4,16 @@
 	<element name="client" type="tns:Client" />
 
 	<complexType name="Client">
-		<!-- wszystkie elementy musza sie pojawic w dokladnie takiej kolejnosci -->
+		<!-- wszystkie elementy musza sie pojawic w dokladnie takiej kolejnosci
+		maxOccurs - okreslamy dopuszczalna ilosc elementow/ bez tego zapisu tylko jeden
+		maxOccurs="unbounded" - dowolna ilosc razy
+		minOccurs - odwrotnie -->
 		<sequence>
 			<element name="id" type="tns:ID" />
-			<element name="name" type="tns:String20" />
+			<element name="name" type="tns:String20" maxOccurs="2"/>
 			<element name="age" type="int" />
-			<element name="dob" type="date" />
-			<element name="email" type="string" />
+			<element name="dob" type="date" minOccurs="0"/>
+			<element name="email" type="string" maxOccurs="unbounded"/>
 			<element name="gender" type="tns:Gender" />
 			<element name="payment" type="tns:PaymentType" />
 		</sequence>
