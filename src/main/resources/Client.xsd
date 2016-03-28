@@ -2,18 +2,20 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.wait.com/client"
 	xmlns:tns="http://www.wait.com/client" elementFormDefault="qualified">
 	<element name="client" type="tns:Client" />
+	<!-- elementFormDefault="qualified" - kazdy dokument korzystajacy z tego 
+		schema, wszystkie elementy powinny byc kwalifikowane prefixem (tu tns) 
+		elementFormDefault="unqualified" - bez prefixu -->
 
 	<complexType name="Client">
-		<!-- wszystkie elementy musza sie pojawic w dokladnie takiej kolejnosci
-		maxOccurs - okreslamy dopuszczalna ilosc elementow/ bez tego zapisu tylko jeden
-		maxOccurs="unbounded" - dowolna ilosc razy
-		minOccurs - odwrotnie -->
+		<!-- wszystkie elementy musza sie pojawic w dokladnie takiej kolejnosci 
+			maxOccurs - okreslamy dopuszczalna ilosc elementow/ bez tego zapisu tylko 
+			jeden maxOccurs="unbounded" - dowolna ilosc razy minOccurs - odwrotnie -->
 		<sequence>
 			<element name="id" type="tns:ID" />
-			<element name="name" type="tns:String20" maxOccurs="2"/>
+			<element name="name" type="tns:String20" maxOccurs="2" />
 			<element name="age" type="int" />
-			<element name="dob" type="date" minOccurs="0"/>
-			<element name="email" type="string" maxOccurs="unbounded"/>
+			<element name="dob" type="date" minOccurs="0" />
+			<element name="email" type="string" maxOccurs="unbounded" />
 			<element name="gender" type="tns:Gender" />
 			<element name="payment" type="tns:PaymentType" />
 		</sequence>
