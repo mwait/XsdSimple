@@ -11,7 +11,7 @@
 			maxOccurs - okreslamy dopuszczalna ilosc elementow/ bez tego zapisu tylko 
 			jeden maxOccurs="unbounded" - dowolna ilosc razy minOccurs - odwrotnie -->
 		<sequence>
-			<element name="id" type="tns:ID" />
+			
 			<element name="name" type="tns:String20" maxOccurs="2" />
 			<element name="age" type="int" />
 			<element name="dob" type="date" minOccurs="0" />
@@ -19,6 +19,8 @@
 			<element name="gender" type="tns:Gender" />
 			<element name="payment" type="tns:PaymentType" />
 		</sequence>
+		
+		<attribute name="id" type="tns:ID"/>
 	</complexType>
 
 	<complexType name="PaymentType">
